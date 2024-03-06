@@ -4,13 +4,13 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
 //Collect all DOM elements
 const locationInput = document.getElementById("locationInput");
-const searchBtt = document.getElementById("searchBtt");
+const searchButton = document.getElementById("searchButton");
 const locationElement = document.getElementById("location");
 const tempElement = document.getElementById("temp");
 const descriptionElement = document.getElementById("description");
 
 //Add click event for search button
-searchBtt.addEventListener("click", function () {
+searchButton.addEventListener("click", () => {
   const location = locationInput.value;
   if (location) {
     fetchWeather(location);
