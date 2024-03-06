@@ -28,7 +28,7 @@ function fetchWeather(location) {
     .then((data) => {
       //the data, think about adding temp in F as well as C if possible
       locationElement.textContent = data.name;
-      tempElement.textContent = `${Math.round(data.main.temp)}°C`;
+      tempElement.textContent = `${Math.round(data.main.temp)}°F`;
       descriptionElement.textContent = data.weather[0].description;
     })
 
