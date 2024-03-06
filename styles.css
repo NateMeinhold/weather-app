@@ -1,6 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: Georgia, serif;
   background-color: #f0f0f0;
+  background-image: url(clouds.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh; /* Set the height to fill the viewport */
+  margin: 0; /* Remove default margin */
+  padding: 0;
 }
 
 .container {
@@ -12,7 +19,7 @@ body {
     255,
     255,
     255,
-    0.5
+    0.52
   ); /* Set the background color to be transparent */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Adjust the alpha value here for the box shadow transparency */
@@ -24,7 +31,7 @@ h1 {
 }
 
 input[type="text"] {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
