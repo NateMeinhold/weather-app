@@ -21,7 +21,7 @@ searchButton.addEventListener("click", () => {
 
 //API call using Fetch ///set units to metric for C
 function fetchWeather(location) {
-  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=imperial`;
 
   fetch(url)
     .then((response) => response.json())
