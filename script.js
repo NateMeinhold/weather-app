@@ -21,14 +21,14 @@ searchBtt.addEventListener("click", function () {
 
 //API call using Fetch ///set units to metric for C
 function fetchWeather(location) {
-  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=imperial`;
+  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       //the data, think about adding temp in F as well as C if possible
       locationElement.textContent = data.name;
-      tempElement.textContent = `${Math.round(data.main.temp)}°F`;
+      tempElement.textContent = `${Math.round(data.main.temp)}°C`;
       descriptionElement.textContent = data.weather[0].description;
     })
 
