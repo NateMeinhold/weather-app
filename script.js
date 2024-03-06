@@ -2,15 +2,15 @@
 const apiKey = "7500887a8169c25dbba8293ea48ce39f";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather";
 
-//Collect all elements
+//Collect all DOM elements
 const locationInput = document.getElementById("locationInput");
-const searchButton = document.getElementById("searchButton");
+const searchBtt = document.getElementById("searchBtt");
 const locationElement = document.getElementById("location");
-const temperatureElement = document.getElementById("temperature");
+const tempElement = document.getElementById("temp");
 const descriptionElement = document.getElementById("description");
 
-//Add click event for search
-searchButton.addEventListener("click", function () {
+//Add click event for search button
+searchBtt.addEventListener("click", function () {
   const location = locationInput.value;
   if (location) {
     fetchWeather(location);
@@ -19,16 +19,16 @@ searchButton.addEventListener("click", function () {
   locationInput.value = "";
 });
 
-//API call using Fetch
+//API call using Fetch ///set units to metric for C
 function fetchWeather(location) {
-  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=metric`;
+  const url = `${apiUrl}?q=${location}&appid=${apiKey}&units=imperial`;
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
       //the data, think about adding temp in F as well as C if possible
       locationElement.textContent = data.name;
-      temperatureElement.textContent = `${Math.round(data.main.temp)}°C`;
+      tempElement.textContent = `${Math.round(data.main.temp)}°F`;
       descriptionElement.textContent = data.weather[0].description;
     })
 
